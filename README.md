@@ -9,7 +9,8 @@ Para ingresar a la parte de blog se deberá tener una cuenta, las cuentas "admin
 mientras que los usuarios comunes solo podrán postear editar y eliminar los propios.
 
 En la página de inicio, se pueden ver las últimas noticias mas importantes sobre el fútbol y haciendo click en leer más 
-se le llevará a la sección "Noticias" donde podrá leer mas en profundidad la notica que llamó su atención.
+se le llevará a la sección "Noticias" donde podrá leer mas en profundidad la noticia que llamó su atención.
+
 En la sección publicar, a la cual se puede acceder teniendo cuenta, podrá realizar publicaciones sobre consejos, opiniones, etc... sobre fútbol.
 
 Finalmente, la sección "Acerca de mi" contiene una breve descripción sobre el autor del proyecto y una breve descripción de la página.
