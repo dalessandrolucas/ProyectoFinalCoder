@@ -14,3 +14,5 @@ se le llevará a la sección "Noticias" donde podrá leer mas en profundidad la 
 En la sección publicar, a la cual se puede acceder teniendo cuenta, podrá realizar publicaciones sobre consejos, opiniones, etc... sobre fútbol.
 
 Finalmente, la sección "Acerca de mi" contiene una breve descripción sobre el autor del proyecto y una breve descripción de la página.
+
+admin creado: admin Ld123456
