@@ -15,4 +15,3 @@ En la sección publicar, a la cual se puede acceder teniendo cuenta, podrá real
 
 Finalmente, la sección "Acerca de mi" contiene una breve descripción sobre el autor del proyecto y una breve descripción de la página.
 
-admin creado: admin Ld123456
