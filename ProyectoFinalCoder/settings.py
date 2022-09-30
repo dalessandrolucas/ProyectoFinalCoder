@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'AppBlog',
+    'AppMensajeria',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'ProyectoFinalCoder.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/A10AM4/OneDrive/Escritorio/Proyecto Final/ProyectoFinalCoder/AppBlog/templates/blog'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
