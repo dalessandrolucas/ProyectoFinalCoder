@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block titulo_doc %}
+
+Sign Up
+
+{% endblock %}
+
+{% block titulo_pagina %}
+
+Registrate!
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h3> {{errores}} </h3>
+
+<form action="", method="POST"> 
+    
+    {% csrf_token %}
+    <table>
+        
+        {{ formulario.as_table }}
+
+    </table>
+    <br>
+    <br>
+    <input type="submit" value="Registrarse">
+</form>
+
+
+{% endblock %}

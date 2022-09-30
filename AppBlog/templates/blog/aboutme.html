@@ -1,13 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca De Mi</title>
-</head>
-<body>
-    <h1>Soy Lucas D'Alessandro</h1>
-    
-</body>
-</html>
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block titulo_doc %}
+
+Acerca de mi
+
+{% endblock %}
+
+{% block titulo_pagina %}
+
+Acerca de mi
+
+{% endblock %}
+
+{% block subtitulo_pagina %}
+
+Lucas D'Alessandro
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<div class="card-body">
+    <h1 class="card-title">Lucas D'Alessandro</h1>
+    <h3 class="card-text">Soy un ingresante en la carrera de programación web en la Universidad Nacional de La Matanza.
+
+        Con esta página busque traer noticias de última hora sobre fútbol
+        además de ofrecer a los usuarios la oportunidad de publicar sus opiniones, consejos, halagos o enojos
+        acerca de este deporte y de sus equipos favoritos mediante el blog.
+        También cuenta con una opción de mensajería donde podrán comunicarse con otros usuarios.</h3>
+</div>
+
+
+{% endblock %}

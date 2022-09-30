@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Blog Home</title>
+    <title>Inicio - Pasión por el fútbol</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -20,16 +20,16 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#!">Pasión por el Fútbol</a>
+            <a class="navbar-brand" href="{% url 'inicio' %}">Pasión por el Fútbol</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Acerca de mi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'aboutme' %}">Acerca de mi</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'registrarse' %}">Registrate!</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'iniciar_sesion' %}">Inicia Sesión!</a></li>
                 </ul>
             </div>
         </div>
@@ -47,17 +47,18 @@
     <div class="container">
         <div class="row">
             <!-- Blog entries-->
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <!-- Featured blog post-->
                 <div class="card mb-4">
                     <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg"
                             alt="..." /></a>
                     <div class="card-body">
-                        <div class="small text-muted">January 1, 2022</div>
-                        <h2 class="card-title">Featured Post Title</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-                            aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi
-                            vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                        <div class="small text-muted">27 de Septiembre, 2022</div>
+                        <h2 class="card-title">Lionel Messi entró en el segundo tiempo contra Jamaica y arrasó</h2>
+                        <p class="card-text">El combinado que conduce Scaloni se impuso por 3-0 en New Jersey 
+                            en una nueva prueba rumbo a Qatar 2022. 
+                            El capitán, que venía de superar un cuadro gripal, comenzó entre los relevos. 
+                            Julián Álvarez abrió el partido.</p>
                         <a class="btn btn-primary" href="#!">Read more →</a>
                     </div>
                 </div>
@@ -69,10 +70,10 @@
                             <a href="#!"><img class="card-img-top"
                                     src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                             <div class="card-body">
-                                <div class="small text-muted">January 1, 2022</div>
-                                <h2 class="card-title h4">Post Title</h2>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Reiciendis aliquid atque, nulla.</p>
+                                <div class="small text-muted">27 de Septiembre, 2022</div>
+                                <h2 class="card-title h4">Stones se lesiona antes del City-United</h2>
+                                <p class="card-text">El defensa del conjunto de Pep Guardiola tuvo que retirarse en el minuto 37 del partido 
+                                    contra Alemania por un problema muscular</p>
                                 <a class="btn btn-primary" href="#!">Read more →</a>
                             </div>
                         </div>
@@ -81,10 +82,10 @@
                             <a href="#!"><img class="card-img-top"
                                     src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                             <div class="card-body">
-                                <div class="small text-muted">January 1, 2022</div>
-                                <h2 class="card-title h4">Post Title</h2>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Reiciendis aliquid atque, nulla.</p>
+                                <div class="small text-muted">23 de Septiembre, 2022</div>
+                                <h2 class="card-title h4">CR7, acusado de mala conducta por la FA</h2>
+                                <p class="card-text">El hecho se debe a que en abril Cristiano Ronaldo  golpeó el móvil de un seguidor de 14 años 
+                                    tras el final del partido de Premier Everton-Manchester United</p>
                                 <a class="btn btn-primary" href="#!">Read more →</a>
                             </div>
                         </div>
@@ -95,10 +96,10 @@
                             <a href="#!"><img class="card-img-top"
                                     src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                             <div class="card-body">
-                                <div class="small text-muted">January 1, 2022</div>
-                                <h2 class="card-title h4">Post Title</h2>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Reiciendis aliquid atque, nulla.</p>
+                                <div class="small text-muted">27 de Septiembre, 2022</div>
+                                <h2 class="card-title h4">La Juventus espera a De Gea, libre a final de temporada</h2>
+                                <p class="card-text">El guardameta español quedará libre a final de temporada y Erik Ten Hag no tiene claro si debe renovar, 
+                                    siendo el segundo mejor pagado de la plantilla y con un rendimiento irregular</p>
                                 <a class="btn btn-primary" href="#!">Read more →</a>
                             </div>
                         </div>
@@ -107,10 +108,10 @@
                             <a href="#!"><img class="card-img-top"
                                     src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                             <div class="card-body">
-                                <div class="small text-muted">January 1, 2022</div>
-                                <h2 class="card-title h4">Post Title</h2>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
+                                <div class="small text-muted">22 de Septiembre, 2022</div>
+                                <h2 class="card-title h4">El Manchester United rompe un récord de gasto en la Premier League</h2>
+                                <p class="card-text">Los 'red devils' poseen el mayor gasto salarial de la Premier League de la temporada 21/22, 
+                                    superando la cifra del récord anterior, en manos del Manchester City</p>
                                 <a class="btn btn-primary" href="#!">Read more →</a>
                             </div>
                         </div>
@@ -119,7 +120,7 @@
                 <!-- Footer-->
                 <footer class="py-5 bg-dark">
                     <div class="container">
-                        <p class="m-0 text-center text-white">FutNoticias &copy; Lucas D'Alessandro 2022</p>
+                        <p class="m-0 text-center text-white">Pasión por el fútbol &copy; Desarrollado por Lucas D'Alessandro 2022</p>
                     </div>
                 </footer>
                 <!-- Bootstrap core JS-->
