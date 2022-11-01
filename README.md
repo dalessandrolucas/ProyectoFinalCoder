@@ -15,4 +15,4 @@ En la sección publicar, a la cual se puede acceder teniendo cuenta, podrá real
 
 Finalmente, la sección "Acerca de mi" contiene una breve descripción sobre el autor del proyecto y una breve descripción de la página.
 
->>>>>>> 6c70a8eef5c1fb00dcb9b06af8df59f51ec797cc
+

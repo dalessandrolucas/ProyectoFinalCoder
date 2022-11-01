@@ -1,7 +1,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Perfil
+from .models import Perfil, Publicacion
+from ckeditor.widgets import CKEditorWidget
 
 
 class Registrar_usuario(UserCreationForm):
@@ -19,4 +20,10 @@ class Meta:
 class Editar_perfil(forms.ModelForm):
     class Meta:
         model = Perfil
+        fields = '__all__'
+
+
+class Noticia_formulario(forms.ModelForm):
+    class Meta:
+        model = Publicacion
         fields = '__all__'

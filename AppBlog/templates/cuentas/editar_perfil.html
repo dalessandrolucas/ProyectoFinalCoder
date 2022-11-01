@@ -1,0 +1,37 @@
+{% extends 'cuentas/index.html' %}
+{% load static %}
+
+{% block titulo_doc %}
+Editar Perfil
+{% endblock %}
+
+{% block titulo_pagina %}
+Mi Perfil
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1 
+class="fw-bopld text-center py-5"> Hola {{user.username}} completá los datos a modificar:</h1>
+<div class="container">
+    <div class="row">
+    <div class="col">
+<form action="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<table>
+    {{ form.as_table }}
+    <script>
+        labels = document.getElementsByTagName('label');
+        for (var j = 0; j < labels.length; j++) {   
+            if (labels[j].textContent == "Name:") labels[j].textContent ="Nombre";
+            if (labels[j].textContent == "Last name:") labels[j].textContent ="Apellido";
+            if (labels[j].textContent == "Description:") labels[j].textContent = "Descripcion";
+            if (labels[j].textContent == "Image:") labels[j].textContent ="Foto de Perfil";
+            };
+    </script>
+</table>
+<br>
+    <input type="submit" class="btn btn-success" value="Guardar"></input>
+    <a class="btn btn-secondary" href = "{% url 'mi_perfil' %}">Volver</a>
+</form>
+</div>
+{% endblock %}
