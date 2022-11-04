@@ -6,7 +6,9 @@ Perfil
 {% endblock %}
 
 {% block titulo_pagina %}
-Mi Perfil
+Perfil de {{ user.username }}
+{{ mensaje }}
+
 {% endblock %}
 
 
@@ -16,13 +18,14 @@ Mi Perfil
 class="fw-bopld text-center py-5"> Hola {{user.username}} este es tú perfil</h1>
 <div class="m-5 p-1">
     <div class="card mx-auto" style="width: 500px; background-color:#d5e1e6">
-      <img src="" class="card-img-top" style="border-radius: 50%; border: 5px; height: 200px; width: 200px; position: relative; left: 30%; top: 1%;" alt="..."/>
+      <img src="{{ imagen }}" class="card-img-top" style="border-radius: 50%; border: 5px; height: 200px; width: 200px; position: relative; left: 30%; top: 1%;" alt="..."/>
       <div class="card-body">
-        <h4 class="card-title">{{user.Perfil.name}} {{user.Perfil.last_name}}</h4>
+        <h4 class="card-title">{{user.first_name}} {{user.last_name}}</h4>
         <br>
-        <h5 class="card-text">Acerca de mí: {{user.Perfil.description}}</h5>
+        <h5 class="card-text">Acerca de mí: {{user.description}}</h5>
         </div>
         </div>
           <a class="btn btn-secondary" href ="{% url 'editar_perfil' %}">Editar Perfil</a>
+          <a class="btn btn-secondary" href ="{% url 'agregaravatar' %}">Agregar Avatar</a>
 
 {% endblock %}

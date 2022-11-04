@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Perfil, Publicacion
+from .models import Avatar, Publicacion
 
 # Register your models here.
 
-admin.site.register(Perfil)
 admin.site.register(Publicacion)
+admin.site.register(Avatar)

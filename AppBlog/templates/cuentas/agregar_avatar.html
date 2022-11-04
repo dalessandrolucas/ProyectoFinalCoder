@@ -1,0 +1,35 @@
+{% extends 'cuentas/index.html' %}
+
+{% load static %}
+
+{% block titulo_doc %}
+
+Accounts - Agregar Avatar
+
+{% endblock %}
+
+{% block titulo_pagina %}
+
+Agregando avatar de {{ user.username }}
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h2> {{ mensaje }} </h2>
+
+<form action="{% url 'agregaravatar' %}", method="POST"> 
+    
+    {% csrf_token %}
+    <table>
+        
+        {{ formulario.as_table }}
+
+    </table>
+    <br>
+    <br>
+    <input type="submit" value="Agregar Avatar">
+</form>
+
+
+{% endblock %}

@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 
 # Imports Perfil y Blog
-from .models import Perfil, Publicacion
+from .models import Publicacion, Avatar
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import UpdateView, CreateView, DeleteView, DetailView, ListView
 from django.urls import reverse
@@ -15,10 +15,10 @@ from django.urls import reverse
 
 
 def inicio(request):
-    return render(request, 'blog_noticias/inicio.html')
+    return render(request, 'blog_noticias/inicio.html', {'imagen':obtener_avatar(request)})
 
 def about_me(request):
-    return render(request, 'blog_noticias/aboutme.html')
+    return render(request, 'blog_noticias/aboutme.html', {'imagen':obtener_avatar(request)})
 
 # Modulo login
 
@@ -75,14 +75,54 @@ def logout_view(request):
 def ver_perfil(request):
     return render(request, 'cuentas/perfil.html')
 
-class Update_profile(LoginRequiredMixin, UpdateView):
-    model = Perfil
-    form = Editar_perfil
-    template_name = 'cuentas/editar_perfil.html'
-    fields = ['name', 'last_name', 'description', 'image']
-    def get_success_url(self):
-        return reverse('mi_perfil')
+@login_required 
+def editarperfil(request):
+    usuario = request.user
+    if request.method=="POST":
+        form=Editar_usuario(request.POST)
+        if form.is_valid():
+            
+            usuario.first_name=form.cleaned_data["first_name"]
+            usuario.last_name=form.cleaned_data["last_name"]
+            usuario.email=form.cleaned_data["email"]
+            usuario.password1=form.cleaned_data["password1"]
+            usuario.password2=form.cleaned_data["password2"]
+            usuario.save()
+            return render(request, "cuentas/perfil.html", {"mensaje":f"editado con éxito "} )
+    else:
+        form= Editar_usuario(instance=usuario)
+        return render(request, "cuentas/editar_perfil.html", {"form":form, "usuario":usuario})
 
+@login_required
+def obtener_avatar(request):
+    lista= Avatar.objects.filter(user=request.user)
+    if len(lista)!=0:
+        imagen=lista[0].imagen.url
+    else:
+        imagen=""
+    return imagen
+
+@login_required
+def agregaravatar(request):
+    if request.method == 'POST':
+        form=Agregar_avatar(request.POST, request.FILES)
+        if form.is_valid():
+            avatarViejo=Avatar.objects.filter(user=request.user)
+            if(len(avatarViejo)>0):
+                avatarViejo.delete()
+            avatar=Avatar(user=request.user, imagen=form.cleaned_data['imagen'])
+            avatar.save()
+            return render(request, 'cuentas/agregar_avatar.html', {'usuario':request.user, "formulario":form, 'mensaje':'AVATAR AGREGADO EXITOSAMENTE', "imagen":obtener_avatar(request)})
+    else:
+        form=Agregar_avatar()
+    return render(request, 'cuentas/agregar_avatar.html', {'formulario':form, 'usuario':request.user, "imagen":obtener_avatar(request)})
+
+@login_required
+def borrarAvatar(request):
+    avatar=Avatar.objects.filter(user=request.user)
+    avatar.delete()
+    formavatar=Agregar_avatar()
+    return render(request, 'cuentas/agregar_avatar.html', {"formavatar":formavatar, "message":"Avatar eliminado", "imagen":obtener_avatar(request)})
 
 # Blog/Noticias CRUD
 

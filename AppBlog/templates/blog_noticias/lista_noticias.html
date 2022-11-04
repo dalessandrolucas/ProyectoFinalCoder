@@ -1,0 +1,41 @@
+{% extends 'blog_noticias/index.html' %}
+
+{% load static %}
+
+{% block titulo_doc %}
+
+Pasión por el Futbol - Todas las Noticias
+
+{% endblock %}
+
+{% block titulo_pagina %}
+
+Todas las Noticias
+
+{% endblock %}
+
+{% block subtitulo_pagina %}
+
+Pasión por el fútbol
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+{% for publicacion in object_list %}
+
+<div class="col mb-5">
+    <div class="card h-120" style="background-color:#d5e1e6">
+        <div class="card-body p-6">
+            <div class="text-center">
+                <h3><class="fw-bolder">{{publicacion.title}}<br></h3>
+                <p class="card-text"><small class="text-muted">Autor: {{publicacion.author}}</small></p>
+                <br>
+                <a href="noticia/{{note.id}}/" class="btn btn-secondary">Ver más</a>
+
+{% endfor %}
+
+<a href="{% url 'crear_noticia' %}" class="btn btn-secondary">Crear Nueva Noticia</a>
+
+
+{% endblock %}

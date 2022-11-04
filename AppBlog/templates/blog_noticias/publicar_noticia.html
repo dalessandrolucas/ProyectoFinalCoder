@@ -1,0 +1,39 @@
+{% extends 'blog_noticias/index.html' %}
+
+{% load static %}
+
+{% block titulo_doc %}
+
+Crear - Noticia
+
+{% endblock %}
+
+{% block titulo_pagina %}
+
+Creando nueva noticia
+
+{% endblock %}
+
+{% block subtitulo_pagina %}
+
+Pasión por el fútbol
+
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<form action="", method="POST"> 
+    
+    {% csrf_token %}
+    <table>
+        
+        {{ form.as_p }}
+
+    </table>
+    <br>
+    <br>
+    <input type="submit" value="Registrarse">
+</form>
+
+
+{% endblock %}

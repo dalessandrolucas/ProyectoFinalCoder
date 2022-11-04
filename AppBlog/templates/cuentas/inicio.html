@@ -29,12 +29,13 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'aboutme' %}">Acerca de mi</a></li>
                     {% if request.user.is_authenticated  %}
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>
+                    <img src="{{ imagen }}" alt="">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'mi_perfil' %}">Mi Perfil</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'leer_noticias' %}">Todas Las Noticias</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'leer_noticias' %}">Todas las Noticias</a></li>
                     {% else %}
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'registrarse' %}">Registrate</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'iniciar_sesion' %}">Inicia Sesión</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'iniciar_sesion' %}">Inicia sesión</a></li>
                     {% endif %}
                  </ul>
             </div>
@@ -45,7 +46,7 @@
         <div class="container">
             <div class="text-center my-5">
                 <h1 class="fw-bolder">Bienvenidos a Pasión por el Fútbol!</h1>
-                <p class="lead mb-0">Tú Página de noticias de última hora sobre fútbol!</p>
+                <p class="lead mb-lg-0">Tú Página de noticias de última hora sobre fútbol!</p>
             </div>
         </div>
     </header>
